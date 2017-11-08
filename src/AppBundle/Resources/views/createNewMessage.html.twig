@@ -1,0 +1,11 @@
+{% extends '@App/header.html.twig'  %}
+{% block body %}
+    {% include "@App/falshContainer.html.twig" %}
+
+    {{ form_start(formBlogPost) }}
+    {{ form_end(formBlogPost) }}
+
+    <br>
+    <a href="{{ path('homepage') }}">return to the list</a>
+{% endblock %}
+

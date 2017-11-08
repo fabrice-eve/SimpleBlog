@@ -1,0 +1,10 @@
+{% extends '@App/header.html.twig'  %}
+{% block body %}
+    {% include "@App/falshContainer.html.twig" %}
+    {% for blog in blogList %}
+        <p> Author : {{ blog.author }}</p>
+        <p> Message : {{ blog.body }}</p>
+    {% endfor %}
+    <br>
+    <a href="{{ path('new_message') }}">NewMessage</a>
+{% endblock %}
