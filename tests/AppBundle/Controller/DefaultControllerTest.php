@@ -14,14 +14,4 @@ class DefaultControllerTest extends WebTestCase
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
-
-    public function testNewMessage()
-    {
-        $client = static::createClient();
-
-        $crawler = $client->request('GET', '/newMessage');
-
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-    }
-
 }

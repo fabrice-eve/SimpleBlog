@@ -34,10 +34,10 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
     admin.category:
-        class: AppBundle\Admin\CategoryAdmin
-        arguments: [~, AppBundle\Entity\Category, ~]
+        class: AppBundle\Admin\AuthorsAdmin
+        arguments: [~, AppBundle\Entity\Authors, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Category }
+            - { name: sonata.admin, manager_type: orm, label: Authors }
         public: true
 
     admin.blog:

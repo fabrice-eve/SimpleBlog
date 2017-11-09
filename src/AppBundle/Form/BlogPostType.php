@@ -20,10 +20,7 @@ class BlogPostType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('author', TextType::class, array(
-                'required' => true
-            ))
-            ->add('title', TextType::class, array(
+        $builder->add('title', TextType::class, array(
                 'required' => true
             ))
             ->add('body', TextareaType::class, array(

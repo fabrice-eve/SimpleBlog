@@ -1,0 +1,14 @@
+ <nav class="navbar navbar-default" role="navigation">
+     {% if not is_granted('ROLE_USER') %}
+     <div class="col-lg-1 col-md-1  col-sm-1 col-xs-1 margin-top">
+         <a href="{{ path('fos_user_security_login') }}">Login</a>
+     </div>
+     <div class="col-lg-1 col-md-1  col-sm-1 col-xs-1 margin-top">
+         <a href="{{ path('fos_user_registration_register') }}">{{ 'create.new.authors'|trans }}</a>
+     </div>
+     {% else %}
+         <div class="col-lg-1 col-md-1  col-sm-1 col-xs-1 margin-top">
+         <a href="{{ path('fos_user_security_logout') }}">{{ 'logout'|trans }}</a>
+        </div>
+     {% endif %}
+ </nav>

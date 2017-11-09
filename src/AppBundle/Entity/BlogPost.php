@@ -22,6 +22,12 @@ class BlogPost
     private $id;
 
     /**
+     * @var Authors
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Authors", inversedBy="blogPost")
+     */
+    private $author;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
@@ -41,12 +47,6 @@ class BlogPost
      * @ORM\Column(name="draft", type="boolean")
      */
     private $draft;
-
-    /** @var  string
-     *
-     * @ORM\Column(name="author", type="string")
-     * */
-    private $author;
 
     /**
      * Get id
@@ -139,7 +139,7 @@ class BlogPost
     }
 
     /**
-     * @param string $author
+     * @param Authors $author
      */
     public function setAuthor($author)
     {

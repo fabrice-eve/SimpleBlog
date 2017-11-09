@@ -1,10 +1,16 @@
-{% extends '@App/header.html.twig'  %}
+{% extends '@App/Head/header.html.twig'  %}
 {% block body %}
-    {% include "@App/falshContainer.html.twig" %}
-    {% for blog in blogList %}
-        <p> Author : {{ blog.author }}</p>
-        <p> Message : {{ blog.body }}</p>
-    {% endfor %}
-    <br>
+    {% include "@App/Head/navBar.html.twig" %}
+    <div class="content">
+        {% include "@App/falshContainer.html.twig" %}
+        <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            {% for blog in blogList %}
+                <p> Author : {{ blog.author }}</p>
+                <p> Message : {{ blog.body }}</p>
+            {% endfor %}
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs"></div>
     <a href="{{ path('new_message') }}">NewMessage</a>
+    </div>
 {% endblock %}

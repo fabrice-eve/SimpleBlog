@@ -18,7 +18,6 @@ class BlogPostTypeTest extends TypeTestCase
     {
         $formData = array(
             'title' => 'testtile',
-            'author' => 'testauthor',
             'body' =>  'testbody',
         );
         $object = $this->ObjectBlogPost($formData);
@@ -41,7 +40,6 @@ class BlogPostTypeTest extends TypeTestCase
     private function ObjectBlogPost($formData)
     {
         $object = new BlogPost();
-        $object->setAuthor($formData['author']);
         $object->setTitle($formData['title']);
         $object->setBody($formData['body']);
         return $object;
